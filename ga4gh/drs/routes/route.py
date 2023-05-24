@@ -5,6 +5,7 @@ in the DRS specification, namely, '/objects/{object_id}' and
 '/objects/{object_id}/access/{access_id}'. Abstract parent holds common 
 properties and methods of each 
 """
+import os
 
 import ga4gh.drs.config.constants as c
 import requests
@@ -71,6 +72,10 @@ class Route(object):
         headers = {}
         if self.authtoken:
             headers["Authorization"] = "Bearer " + self.authtoken
+
+        crypt4gh_pubkey = os.environ.get("CRYPT4GH_PUBKEY")
+        if crypt4gh_pubkey:
+            headers["crypt4gh-pubkey"] = crypt4gh_pubkey
         return headers
 
     def construct_params(self):
