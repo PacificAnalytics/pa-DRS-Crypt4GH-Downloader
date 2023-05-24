@@ -59,8 +59,8 @@ class GetCliValidator(object):
         # parse the url under the 'url' property. Url must have a scheme
         # of "https," and must have a netloc that is not null/empty
         parsed_url = urlparse(url)
-        if parsed_url.scheme != "https":
-            raise CLIException("Invalid URL scheme. Only https supported")
+        # if parsed_url.scheme != "https":
+        #     raise CLIException("Invalid URL scheme. Only https supported")
         if parsed_url.netloc == "":
             raise CLIException("Invalid URL provided")
     

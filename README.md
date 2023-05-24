@@ -13,6 +13,13 @@ by the [Global Alliance for Genomics and Health](https://www.ga4gh.org/), serves
 API framework to allow for interoperability of datasets hosted at different
 institutions.
 
+## PA-specific changes
+
+The following changes were made to the DRS client to support the DRS-Crypt4GH usecase:
+
+1. Temporarily allow HTTP (GH [#1](https://github.com/PacificAnalytics/pa-DRS-Crypt4GH-Downloader/pull/1)). Allows for downloading from resources that support only HTTP.
+2. Pass in Crypt4GH key (GH [#2](https://github.com/PacificAnalytics/pa-DRS-Crypt4GH-Downloader/pull/2)). Allows for passing in a Crypt4GH public key as an HTTP header. To pass in a key, set the `CRYPT4GH_PUBKEY` environment variable.
+
 ## Installation and Usage
 
 Please review the [GA4GH DRS Client Documentation](https://ga4gh-drs-client.readthedocs.io/en/latest/) for instructions on how to install and use the command-line application.
